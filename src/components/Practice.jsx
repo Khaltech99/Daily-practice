@@ -9,6 +9,7 @@ const Practice = () => {
   const reset = counterStore((state) => state.reset);
   const cut = counterStore((state) => state.cut);
   const double = counterStore((state) => state.double);
+
   return (
     <div className="flex flex-col gap-8 justify-center items-center">
       <h1 className="font-bold text-4xl">{count}</h1>
