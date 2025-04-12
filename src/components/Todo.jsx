@@ -1,4 +1,13 @@
-import { Check, Edit, Pen, Plus, ThumbsUp, Trash, Trash2 } from "lucide-react";
+import {
+  Check,
+  CheckCircle,
+  Edit,
+  Pen,
+  Plus,
+  ThumbsUp,
+  Trash,
+  Trash2,
+} from "lucide-react";
 import React, { useState } from "react";
 import { todoStore } from "../../todoStore";
 
@@ -10,6 +19,7 @@ const Todo = () => {
     setFilter,
     filteredTodos,
     toggleTodo,
+    forceComplete,
   } = todoStore();
   const [userInput, setUserInput] = useState("");
 
@@ -70,7 +80,7 @@ const Todo = () => {
                   className={`${todo.completed ? "opacity" : "opacity-0"}`}
                 />
               </div>
-              {/* ✅ Changed todo.userInput to todo.text, adjust based on your store */}
+
               <h1 className="text-lg">{todo.userInput}</h1>
             </div>
           </div>
@@ -79,14 +89,12 @@ const Todo = () => {
               className="bg-amber-500 p-1 rounded-sm text-white"
               onClick={() => deleteTodo(todo.id)}
             />
-            {/* ✅ Properly passing parameters to startEditing */}
             <Pen
               className="bg-amber-500 p-1 rounded-sm text-white"
               onClick={(e) => startEditing(e, todo.id, todo.userInput)}
             />
           </div>
 
-          {/* ✅ Show edit input only for the specific todo being edited */}
           {isEditing && editId === todo.id && (
             <div className="flex flex-col justify-center items-center mt-6 gap-2">
               <input
@@ -136,6 +144,12 @@ const Todo = () => {
             {status}
           </p>
         ))}
+        <div
+          className="flex justify-center items-center bg-amber-900 p-1 text-white rounded-sm"
+          onClick={forceComplete}
+        >
+          <CheckCircle size={25} />
+        </div>
       </div>
     </div>
   );
