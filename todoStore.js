@@ -41,4 +41,8 @@ export const todoStore = create((set, get) => ({
         completed: (todo.completed = true),
       })),
     })),
+  forceTrash: () =>
+    set({
+      todos: [],
+    }),
 }));
