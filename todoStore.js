@@ -33,4 +33,12 @@ export const todoStore = create((set, get) => ({
     if (filter === "completed") return todos.filter((todo) => todo.completed);
     return todos;
   },
+
+  forceComplete: () =>
+    set((state) => ({
+      todos: state.todos.map((todo) => ({
+        ...todo,
+        completed: (todo.completed = true),
+      })),
+    })),
 }));
