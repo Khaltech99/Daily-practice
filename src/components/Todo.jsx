@@ -20,6 +20,7 @@ const Todo = () => {
     filteredTodos,
     toggleTodo,
     forceComplete,
+    forceTrash,
   } = todoStore();
   const [userInput, setUserInput] = useState("");
 
@@ -145,10 +146,16 @@ const Todo = () => {
           </p>
         ))}
         <div
-          className="flex justify-center items-center bg-amber-900 p-1 text-white rounded-sm"
+          className="flex justify-center items-center bg-green-500 p-1 text-white rounded-sm"
           onClick={forceComplete}
         >
           <CheckCircle size={25} />
+        </div>
+        <div
+          className="flex justify-center items-center bg-red-500 p-1 text-white rounded-sm"
+          onClick={forceComplete}
+        >
+          <Trash size={25} onClick={forceTrash} />
         </div>
       </div>
     </div>
