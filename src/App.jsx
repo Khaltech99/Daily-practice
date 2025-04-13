@@ -6,7 +6,7 @@ import DashBoard from "./components/DashBoard";
 import Todo from "./components/Todo";
 
 const App = () => {
-  return <Todo />;
+  return <Movies />;
 };
 
 export default App;
