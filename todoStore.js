@@ -38,7 +38,7 @@ export const todoStore = create((set, get) => ({
     set((state) => ({
       todos: state.todos.map((todo) => ({
         ...todo,
-        completed: (todo.completed = true),
+        completed: true,
       })),
     })),
   forceTrash: () =>
