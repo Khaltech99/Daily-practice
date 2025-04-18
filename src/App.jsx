@@ -5,9 +5,10 @@ import Practice from "./components/Practice";
 import DashBoard from "./components/DashBoard";
 import Todo from "./components/Todo";
 import Movies from "./components/Movies";
+import PostPrac from "./components/PostPrac";
 
 const App = () => {
-  return <Movies />;
+  return <PostPrac />;
 };
 
 export default App;
