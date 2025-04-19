@@ -2,15 +2,15 @@ import axios from "axios";
 
 export const postTodo = async (input) => {
   try {
-    const response = await axios.post(
+    const { data } = await axios.post(
       "https://jsonplaceholder.typicode.com/posts",
 
       input
     );
 
-    console.log(response.data);
+    console.log(data);
 
-    return response.data;
+    return data;
   } catch (error) {
     console.log(error);
   }
