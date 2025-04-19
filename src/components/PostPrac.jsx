@@ -46,11 +46,7 @@ const PostPrac = () => {
           onChange={(e) => setBody(e.target.value)}
           value={body}
         />
-        <input
-          type="text"
-          className=" bg-none border-2 outline-0 p-2 border-blue-400 rounded w-[80%] my-2"
-          value={userId}
-        />
+
         <button type="submit">submit</button>
       </form>
     </div>
