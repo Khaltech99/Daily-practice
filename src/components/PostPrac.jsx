@@ -7,7 +7,7 @@ const PostPrac = () => {
   const [body, setBody] = useState("");
 
   const queryClient = useQueryClient();
-  const mutation = useMutation({
+  const { mutate } = useMutation({
     mutationKey: ["todo"],
     mutationFn: postTodo,
     onSuccess: () => {
@@ -23,7 +23,7 @@ const PostPrac = () => {
       title: title,
       body: body,
     };
-    mutation.mutate(todoData);
+    mutate(todoData);
   };
 
   return (
