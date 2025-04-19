@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { postTodo } from "../../store";
 
 const PostPrac = () => {
-  const [userId, setUserId] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
@@ -16,6 +15,7 @@ const PostPrac = () => {
     },
   });
 
+  const userId = Date.now();
   const handleSubmit = (e) => {
     e.preventDefault();
     const todoData = {
@@ -49,7 +49,6 @@ const PostPrac = () => {
         <input
           type="text"
           className=" bg-none border-2 outline-0 p-2 border-blue-400 rounded w-[80%] my-2"
-          onChange={(e) => setUserId(e.target.value)}
           value={userId}
         />
         <button type="submit">submit</button>
