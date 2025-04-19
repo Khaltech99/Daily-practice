@@ -1,16 +1,18 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
-import { useTodo } from "../../store";
+import { postTodo } from "../../store";
 
 const PostPrac = () => {
   const [userId, setUserId] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const { data, isError } = useQuery({
-    queryKey: ["todo"],
-    queryFn: useTodo,
-    onSuccess: (data) => {
-      console.log(data);
+
+  const queryClient = useQueryClient();
+  const mutation = useMutation({
+    mutationKey: ["todo"],
+    mutationFn: postTodo,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["todo"]);
     },
   });
 
@@ -21,9 +23,9 @@ const PostPrac = () => {
       title: title,
       body: body,
     };
+    mutation.mutate(todoData);
   };
 
-  isError && console.log("error", isError);
   return (
     <div>
       <form
