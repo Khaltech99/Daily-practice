@@ -6,12 +6,12 @@ const PostPrac = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
-  const queryClient = useQueryClient();
+  const { invalidateQueries } = useQueryClient();
   const { mutate } = useMutation({
     mutationKey: ["todo"],
     mutationFn: postTodo,
     onSuccess: () => {
-      queryClient.invalidateQueries(["todo"]);
+      invalidateQueries(["todo"]);
     },
   });
 
