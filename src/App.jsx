@@ -5,10 +5,11 @@ import React from "react";
 // import DashBoard from "./components/DashBoard";
 // import Todo from "./components/Todo";
 // import Movies from "./components/Movies";
-import PostPrac from "./components/PostPrac";
+// import PostPrac from "./components/PostPrac";
+import QueryPractice from "./components/QueryPractice";
 
 const App = () => {
-  return <PostPrac />;
+  return <QueryPractice />;
 };
 
 export default App;
