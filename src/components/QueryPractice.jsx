@@ -31,11 +31,13 @@ const QueryPractice = () => {
         <button
           className="bg-green-500 text-white rounded-sm"
           onClick={increment}
+          // onScroll={increment}
         >
           Next
         </button>
         <button
           className="bg-red-500 text-white rounded-sm"
+          disabled={page === 1}
           onClick={decrement}
         >
           Previous
