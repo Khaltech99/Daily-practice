@@ -6,10 +6,11 @@ import React from "react";
 // import Todo from "./components/Todo";
 // import Movies from "./components/Movies";
 // import PostPrac from "./components/PostPrac";
-import QueryPractice from "./components/QueryPractice";
+// import QueryPractice from "./components/QueryPractice";
+import DisplayPosts from "./components/displayPosts";
 
 const App = () => {
-  return <QueryPractice />;
+  return <DisplayPosts />;
 };
 
 export default App;
