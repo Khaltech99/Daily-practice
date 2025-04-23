@@ -7,10 +7,21 @@ import React from "react";
 // import Movies from "./components/Movies";
 // import PostPrac from "./components/PostPrac";
 // import QueryPractice from "./components/QueryPractice";
-import DisplayPosts from "./components/displayPosts";
+// import DisplayPosts from "./components/displayPosts";
+import Weather from "./components/Weather";
+import { Outlet } from "react-router";
+
+
+
+
 
 const App = () => {
-  return <DisplayPosts />;
+  return (
+    <div>
+      <Outlet />
+      <Weather />
+    </div>
+  );
 };
 
 export default App;
