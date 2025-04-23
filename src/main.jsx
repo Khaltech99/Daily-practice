@@ -4,7 +4,8 @@ import "./index.css";
 import App from "./App.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router";
-import DisplayUser from "./components/displayUser.jsx";
+// import DisplayUser from "./components/displayUser.jsx";
+import Todo from "./components/Todo.jsx";
 
 const todoClient = new QueryClient();
 createRoot(document.getElementById("root")).render(
@@ -13,7 +14,6 @@ createRoot(document.getElementById("root")).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/users/:id" element={<DisplayUser />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
