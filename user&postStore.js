@@ -21,4 +21,3 @@ export async function fetchUser(id) {
     console.log(error);
   }
 }
-fetchUser(12);
