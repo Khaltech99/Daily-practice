@@ -14,4 +14,4 @@ export async function fetchWeather(city) {
   }
 }
 
-fetchWeather("London");
+// fetchWeather("London");
