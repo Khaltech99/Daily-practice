@@ -48,6 +48,8 @@ export async function getQuizQuestions() {
       "https://opentdb.com/api.php?amount=15&category=21&type=multiple"
     );
     const { results } = data;
+    console.log(results);
+
     return results;
   } catch (error) {
     console.log(error);
