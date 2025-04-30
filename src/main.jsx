@@ -4,12 +4,12 @@ import "./index.css";
 import App from "./App.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router";
-// import DisplayUser from "./components/displayUser.jsx";
-// import Todo from "./components/Todo.jsx";
-// import Quiz from "./components/Quiz.jsx";
 import ShadPractice from "./components/ShadPractice.jsx";
+import Wrapper from "./components/Wrapper";
+// import { Toaster } from "sonner"; // ✅ Correct import
 
 const todoClient = new QueryClient();
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <QueryClientProvider client={todoClient}>
@@ -17,6 +17,8 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<ShadPractice />} />
         </Routes>
+        <Wrapper />
+        {/* ✅ Correct placement */}
       </BrowserRouter>
     </QueryClientProvider>
   </StrictMode>
