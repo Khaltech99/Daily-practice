@@ -6,10 +6,12 @@ import React from "react";
 // import AlertDialogues from "./AlertDialogues";
 
 import MyForm from "./MyForm";
+import ComboBox from "./ComboBox";
 const ShadPractice = () => {
   return (
     <div>
       <MyForm />
+      <ComboBox />
     </div>
   );
 };
