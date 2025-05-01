@@ -80,7 +80,9 @@ const MyForm = () => {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <Button type="submit" variant="secondary">
+            Submit
+          </Button>
         </form>
       </Form>
     </div>
