@@ -7,11 +7,13 @@ import React from "react";
 
 import MyForm from "./MyForm";
 import ComboBox from "./ComboBox";
+import SheetPrac from "./SheetPrac";
 const ShadPractice = () => {
   return (
     <div>
       <MyForm />
       <ComboBox />
+      <SheetPrac />
     </div>
   );
 };
