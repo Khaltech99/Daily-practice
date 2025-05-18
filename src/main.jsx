@@ -6,6 +6,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router";
 import ShadPractice from "./components/ShadPractice.jsx";
 import Wrapper from "./components/Wrapper";
+import Login from "./components/Login";
+import HomePage from "./components/HomePage";
+import PasswordReset from "./components/PasswordReset";
+import UpdatePassword from "./components/updatePassword";
+import Verified from "./components/Verified";
+import Random from "./components/Random";
+import SignUp from "./components/SignUp";
+import Success from "./components/Success";
+import Fail from "./components/Fail";
 // import { Toaster } from "sonner"; // ✅ Correct import
 
 const todoClient = new QueryClient();
@@ -15,7 +24,15 @@ createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={todoClient}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ShadPractice />} />
+          <Route path="/" element={<Random />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/homepage" element={<HomePage />} />
+          <Route path="/reset-password" element={<PasswordReset />} />
+          <Route path="/update-password" element={<UpdatePassword />} />
+          <Route path="/verify" element={<Verified />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/fail" element={<Fail />} />
         </Routes>
         <Wrapper />
         {/* ✅ Correct placement */}
