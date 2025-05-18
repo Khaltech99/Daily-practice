@@ -62,27 +62,33 @@
 
 // const user:Roles = "bola";
 
-type PetType = "dog" | "fish" | "cat";
+// type PetType = "dog" | "fish" | "cat";
 
-const petType: PetType = "fish";
+// const petType: PetType = "fish";
 
-const getPetSound = (pet: PetType): string => {
-  if (pet === "dog") {
-    return "bark";
-  } else if (pet === "cat") {
-    return "meow";
-  }
-  return "sound of fish";
-};
+// const getPetSound = (pet: PetType): string => {
+//   if (pet === "dog") {
+//     return "bark";
+//   } else if (pet === "cat") {
+//     return "meow";
+//   }
+//   return "sound of fish";
+// };
 
-interface Vehicle {
-  name: string;
-}
-type Car = Vehicle & { doors: number };
+// interface Vehicle {
+//   name: string;
+// }
+// type Car = Vehicle & { doors: number };
 
-(result = [1, 1]), [2, 2];
+// function repeat(value, times) {
+//   let arr = new Array(times);
+//   arr.fill(value);
+//   return arr;
+// }
 
-function repeat(value, times) {
-  let arr = [];
-  const result = arr.fill(value, times);
-}
+// const ourWork: any = "this is good";
+
+// const checkNumber = (ourWork as string).length;
+// console.log(checkNumber);
+
+let age = 21;
