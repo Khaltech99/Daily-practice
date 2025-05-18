@@ -6,3 +6,15 @@ export const uiStore = create((set) => ({
       toggleMode: state.toggleMode === "light" ? "dark" : "light",
     })),
 }));
+
+export const authStore = create((set) => ({
+  user: null,
+  isVerified: false,
+  setIsVerified: (isVerified) => set({ isVerified: isVerified }),
+  email: "",
+  sessionId: "",
+  userFn: (username) => set({ user: username }),
+  emailFn: (email) => set({ email: email }),
+  sessionIdFn: (sessionId) => set({ sessionId: sessionId }),
+  resetFn: () => set({ user: null, email: "" }),
+}));
