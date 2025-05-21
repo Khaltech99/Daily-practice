@@ -1,4 +1,4 @@
-import { Account, Client, OAuthProvider } from "appwrite";
+import { Account, Client, ID, OAuthProvider } from "appwrite";
 
 const endpoint = "https://fra.cloud.appwrite.io/v1";
 const projectId = "675b12f500385603e84e";
@@ -68,5 +68,38 @@ export const loginWithEmail = async () => {
   } catch (error) {
     console.log(error);
     return { success: false, message: "login failed" };
+  }
+};
+
+//LOGIN WITH PHONE NUMBER
+export const sendPhoneNumber = async (userPhoneNumber) => {
+  try {
+    const data = await account.createPhoneToken(ID.unique(), userPhoneNumber);
+    return { success: true, message: "token sent successfully", data };
+  } catch (error) {
+    console.log(error);
+    return { success: false, message: "login failed" };
+  }
+};
+
+export const loginWithToken = async (userId, otp) => {
+  try {
+    await account.createSession(userId, otp);
+    return { success: true, message: "login successful" };
+  } catch (error) {
+    console.log(error);
+    return { success: false, message: "login failed" };
+  }
+};
+
+//GETUSER
+
+export const getUser = async () => {
+  try {
+    const user = await account.get();
+    return { success: true, message: "user fetched successfully", user };
+  } catch (error) {
+    console.log(error);
+    return { success: false, message: "user not found" };
   }
 };
