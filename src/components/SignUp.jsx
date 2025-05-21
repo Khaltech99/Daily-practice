@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import {
   Card,
   CardContent,
@@ -26,6 +26,7 @@ import { ID } from "appwrite";
 import { useMutation } from "@tanstack/react-query";
 
 function SignUp() {
+  const navigate = useNavigate();
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -141,6 +142,12 @@ function SignUp() {
               Login
             </Link>
           </p>
+          <Button
+            className="capitalize"
+            onClick={() => navigate("/phone-login")}
+          >
+            login with phone number
+          </Button>
         </CardFooter>
       </Card>
     </div>
