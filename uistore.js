@@ -18,3 +18,8 @@ export const authStore = create((set) => ({
   sessionIdFn: (sessionId) => set({ sessionId: sessionId }),
   resetFn: () => set({ user: null, email: "" }),
 }));
+
+export const productStore = create((set) => ({
+  products: [],
+  setProducts: (products) => set({ products: products }),
+}));
