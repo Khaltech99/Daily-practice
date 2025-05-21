@@ -41,3 +41,42 @@ export const updatePasswordSchema = z
     message: "Passwords don't match",
     path: ["confirmPassword"],
   });
+
+export const phoneSchema = z.object({
+  phone: z
+    .string()
+    .min(14, "Phone number must be 14 characters including +234")
+    .max(14, "Phone number must be 14 characters including +234")
+    .regex(
+      /^\+234[1-9]\d{9}$/,
+      "Phone number must start with +234 followed by 10 digits, first digit 1-9"
+    )
+    .transform((val) => {
+      // Remove non-digit characters except +, strip leading zeros
+      let cleaned = val.replace(/[^0-9+]/g, "").replace(/^0+/, "");
+      // If it doesn't start with +234, prepend it
+      if (!cleaned.startsWith("+234")) {
+        cleaned = `+234${cleaned.replace(/^\+234/, "")}`;
+      }
+      // Remove zero immediately after +234
+      cleaned = cleaned.replace(/^\+2340+/, "+234");
+      // Ensure length is 13 characters
+      return cleaned.slice(0, 15);
+    }),
+});
+
+export const otpSchema = z.object({
+  pin: z.string().length(6, "OTP must be 6 digits"),
+});
+
+export const productSchema = z.object({
+  productName: z.string(),
+  productPrice: z.coerce
+    .number({ invalid_type_error: "price must be a number" })
+    .min(10, "price must be at least 0")
+    .max(15, "price must not exceed 1000")
+    .refine((val) => !isNaN(val) && Number.isFinite(val), {
+      message: "Invalid float value",
+    }),
+  productDescription: z.string(),
+});
