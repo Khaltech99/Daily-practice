@@ -80,3 +80,37 @@ export const productSchema = z.object({
     }),
   productDescription: z.string(),
 });
+
+//schema for file upload
+
+// File upload validation schema
+export const fileUploadSchema = z.object({
+  file: z
+    .instanceof(File, { message: "Please select a file" })
+    .refine((file) => file.size <= 2 * 1024 * 1024, {
+      message: "File size must be less than 2MB",
+    })
+    .refine(
+      (file) => {
+        const allowedTypes = [
+          "image/svg+xml",
+          "image/png",
+          "image/jpeg",
+          "image/gif",
+        ];
+        return allowedTypes.includes(file.type);
+      },
+      {
+        message: "File type not supported. Please upload SVG, PNG, JPG or GIF",
+      }
+    ),
+});
+
+// Additional schema for form data if needed
+export const uploadFormSchema = z.object({
+  file: fileUploadSchema.shape.file,
+  description: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+});
+
+// Type inference for TypeScript (if using TypeScript)
