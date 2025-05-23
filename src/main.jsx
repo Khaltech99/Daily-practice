@@ -7,7 +7,8 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import AddProduct from "./AddProduct";
 // import ShadPractice from "./components/ShadPractice.jsx";
 import Wrapper from "./components/Wrapper";
-import ProductPage from "./ProductPage";
+// import ProductPage from "./ProductPage";
+import FileUpload from "./FileUpload";
 // import Login from "./components/Login";
 // import HomePage from "./components/HomePage";
 // import PasswordReset from "./components/PasswordReset";
@@ -39,8 +40,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="/fail" element={<Fail />} />
           <Route path="/phone-login" element={<PhoneLogin />} />
           <Route path="/verify-otp" element={<VerifyOtp />} /> */}
-          <Route path="/" element={<AddProduct />} />
-          <Route path="/productpage" element={<ProductPage />} />
+          <Route path="/" element={<FileUpload />} />
+          {/* <Route path="/productpage" element={<ProductPage />} /> */}
         </Routes>
         <Wrapper />
         {/* ✅ Correct placement */}
